@@ -1,7 +1,7 @@
 import sys
 import pygame as pg
 import random as r
-from pygame.draw import circle, rect
+from pygame.draw import circle, rect, polygon
 
 
 def setup() -> object:
@@ -38,6 +38,11 @@ def main(surface: object, updater: object) -> None:
             circle(surface, pg.Color('snow'), (snowman_x, snowman_y), i * 30)
             snowman_y += i * 70
 
+        # ЁЛКА
+        polygon(surface, pg.Color('green'), [(1000, 500), (900, 400), (800, 500)])
+        polygon(surface, pg.Color('green'), [(1000, 440), (900, 340), (800, 440)])
+        polygon(surface, pg.Color('green'), [(1000, 390), (900, 290), (800, 390)])
+        rect(surface, pg.Color('chocolate4'), (890, 500, 20, 145))
 
 
         for i in range(len(snowflakes)):
